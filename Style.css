@@ -1,6 +1,6 @@
-﻿<style >
+﻿/*<style >*/
 /* === RESET & BASICS === */
-* {
+/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,10 +18,10 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
-}
+}*/
 
 /* === HEADER & NAVIGATION === */
-header {
+/*header {
     background: #1e3a8a;
     color: white;
     padding: 1rem 0;
@@ -54,10 +54,10 @@ nav {
 
     .nav-links a:hover {
         color: #93c5fd;
-    }
+    }*/
 
 /* === HERO SECTION === */
-.hero {
+/*.hero {
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
     color: white;
     text-align: center;
@@ -77,10 +77,10 @@ nav {
         max-width: 650px;
         margin: 0 auto;
         opacity: 0.95;
-    }
+    }*/
 
 /* === COMMON SECTION STYLES === */
-section {
+/*section {
     padding: 4rem 0;
 }
 
@@ -89,10 +89,10 @@ section {
         margin-bottom: 3rem;
         color: #1e3a8a;
         font-size: 2rem;
-    }
+    }*/
 
 /* === ABOUT SECTION === */
-.about {
+/*.about {
     background: #fff;
     text-align: center;
 }
@@ -103,10 +103,10 @@ section {
         font-size: 1.1rem;
         line-height: 1.7;
         color: #444;
-    }
+    }*/
 
 /* === PROJECTS SECTION === */
-.projects {
+/*.projects {
     background: #f3f4f6;
 }
 
@@ -138,10 +138,10 @@ section {
         color: #555;
         margin-bottom: 0.8rem;
         font-size: 1rem;
-    }
+    }*/
 
 /* === SKILLS SECTION === */
-.skills {
+/*.skills {
     background: #fff;
 }
 
@@ -168,10 +168,10 @@ section {
     .skill-tag:hover {
         background: #1e3a8a;
         transform: scale(1.05);
-    }
+    }*/
 
 /* === CONTACT SECTION === */
-.contact {
+/*.contact {
     text-align: center;
     background: #1e3a8a;
     color: white;
@@ -200,19 +200,19 @@ section {
     .contact a:hover {
         color: #fff;
         text-decoration: underline;
-    }
+    }*/
 
 /* === FOOTER === */
-footer {
+/*footer {
     background: #111827;
     color: #9ca3af;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
-}
+}*/
 
 /* === MOBILE RESPONSIVE === */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .nav-links {
         display: none;
     }
@@ -248,4 +248,4 @@ footer {
     }
 }
 
-</style >
+</style >*/
