@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+</head>
+<body>
+    <!--Bored but i should be studying, so i do this instead-->
+    <!--Project 1-->
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="result" readonly>
+        </div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteLast()">⌫</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">×</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="calculate()" class="equals">=</button>
+
+            <button onclick="appendToDisplay('0')" class="zero">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        // Calculator functionality
+        function appendToDisplay(value) {
+            const display = document.getElementById('result');
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('result').value = '';
+        }
+
+        function deleteLast() {
+            const display = document.getElementById('result');
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            const display = document.getElementById('result');
+            try {
+                // Replace × with * for calculation
+                let expression = display.value.replace(/×/g, '*');
+                // Basic security - only allow numbers and operators
+                if (/^[0-9+\-*/.() ]+$/.test(expression)) {
+                    display.value = eval(expression);
+                } else {
+                    display.value = 'Eh!😒';
+                }
+            } catch (error) {
+                display.value = 'Eh!😒';
+            }
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', function (event) {
+            const key = event.key;
+            const display = document.getElementById('result');
+
+            if (key >= '0' && key <= '9' || key === '.') {
+                appendToDisplay(key);
+            } else if (key === '+' || key === '-' || key === '*') {
+                appendToDisplay(key);
+            } else if (key === '/') {
+                event.preventDefault(); // Prevent browser search
+                appendToDisplay('/');
+            } else if (key === 'Enter' || key === '=') {
+                event.preventDefault();
+                calculate();
+            } else if (key === 'Escape' || key === 'Delete') {
+                clearDisplay();
+            } else if (key === 'Backspace') {
+                deleteLast();
+            }
+        });
+    </script>
+</body>
+</html>
